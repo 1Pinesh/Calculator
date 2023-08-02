@@ -43,7 +43,7 @@ eight.textContent = 8
 nine.textContent = 9
 multiply.textContent = "X"
 add.textContent = "+"
-divide.textContent = "/"
+divide.textContent = "÷"
 minus.textContent = "-"
 allClear.textContent = "A/C"
 equal.textContent = "="
