@@ -67,9 +67,6 @@ input_con.appendChild(divide)
 input_con.appendChild(allClear)
 input_con.appendChild(equal)
 
-
-
-
 // Giving the element classes
 contanier.classList.add("cal-con")
 

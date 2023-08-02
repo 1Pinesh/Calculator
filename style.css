@@ -1,0 +1,8 @@
+body{
+    background-color: lightblue;
+}
+
+.input-con{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
