@@ -1,5 +1,11 @@
 body{
-    background-color: lightblue;
+    background-color: aquamarine;
+    animation: colour 5s ease-in;
+}
+@keyframes colour {
+    from {background-color: black;}
+    to {background-color: yellow;}
+    to {background-color: aquamarine;}
 }
 
  .cal-con{
@@ -70,3 +76,8 @@ button:hover{
     box-shadow: 1px 1px 1px 1px;
 }
 
+/* Title */
+h1 {
+    text-align: center;
+    margin: 10px;
+}
