@@ -68,6 +68,64 @@ input_con.appendChild(divide)
 input_con.appendChild(allClear)
 input_con.appendChild(equal)
 
+// Button event handler 
+zero.addEventListener("click", () => {
+    return currentInput.textContent += 0
+})
+one.addEventListener("click", () => {
+    return currentInput.textContent += 1
+})
+two.addEventListener("click", () => {
+    return currentInput.textContent += 2
+})
+three.addEventListener("click", () => {
+    return currentInput.textContent += 3
+})
+four.addEventListener("click", () => {
+    return currentInput.textContent += 4
+})
+five.addEventListener("click", () => {
+    return currentInput.textContent += 5
+})
+six.addEventListener("click", () => {
+    return currentInput.textContent += 6
+})
+seven.addEventListener("click", () => {
+    return currentInput.textContent += 7
+})
+eight.addEventListener("click", () => {
+    return currentInput.textContent += 8
+})
+nine.addEventListener("click", () => {
+    return currentInput.textContent += 9
+})
+plus.addEventListener("click", () => {
+    currentOperator = "+";
+    lastInput.textContent = currentInput.textContent + " +"; 
+    currentInput.textContent = ""; 
+})
+minus.addEventListener("click", () => {
+    currentOperator = "-";
+    lastInput.textContent = currentInput.textContent + " -"; 
+    currentInput.textContent = ""; 
+})
+multiply.addEventListener("click", () => {
+    currentOperator = "X";
+    lastInput.textContent = currentInput.textContent + " X"; 
+    currentInput.textContent = "";
+})
+divide.addEventListener("click", () => {
+    currentOperator = "÷";
+    lastInput.textContent = currentInput.textContent + " ÷"; 
+    currentInput.textContent = "";
+  
+})
+allClear.addEventListener("click", () => {
+    return currentInput.textContent = "" , lastInput.textContent = ""
+    
+
+})
+
 // Giving the element classes
 contanier.classList.add("cal-con")
 
@@ -82,12 +140,14 @@ document.body.appendChild(contanier)
 contanier.appendChild(display)
 contanier.appendChild(input_con)
 
-function addition(current, previouse) {
+
+// Calculator Operator Function
+function addition(previouse,current) {
     let ans = previouse + current
     lastInput.textContent = ans
 }
 
-function subtraction(current, previouse) {
+function subtraction(previouse,current) {
     let ans = previouse - current
     lastInput.textContent = ans
 }
@@ -116,4 +176,27 @@ function division(previouse,current) {
     }
 }
 
-division(900,80)
+
+function equalFn(past, current, operator) {
+    if (isNaN(past) || isNaN(current)) {
+        alert("Please provide two inputs and an operator.");
+        console.log(parseFloat(past))
+        console.log(parseFloat(current))
+        console.log(operator)
+    } else {
+        if (operator === "+") {
+            return current.textContent = addition(parseFloat(past), parseFloat(current));
+        } else if (operator === "-") {
+            return current.textContent = subtraction(past, current);
+        } else if (operator === "÷") {
+            return current.textContent = division(past, current);
+        } else if (operator === "X") {
+            return current.textContent = multiplication(past, current);
+        }
+    }
+}
+
+equal.addEventListener("click", () => {
+    equalFn(parseInt(lastInput.textContent), parseInt(currentInput.textContent), lastInput.textContent.substring(lastInput.textContent.length -1,lastInput.textContent.length));
+   
+});
