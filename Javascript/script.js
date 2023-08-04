@@ -103,7 +103,8 @@ function multiplication(current, previouse) {
    
 }
 
-function division(current, previouse) {
+function division(previouse,current) {
+
     if (previouse.textContent === 0) {
         lastInput.textContent = 0
     } else if (previouse === current) {
@@ -113,8 +114,6 @@ function division(current, previouse) {
         let ans = previouse / current
         lastInput.textContent = ans
     }
-
-    
 }
 
-division(1,2)
+division(900,80)
