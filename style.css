@@ -2,33 +2,64 @@ body{
     background-color: lightblue;
 }
 
-.cal-con{
+ .cal-con{
     margin: 0%;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-right: -40%;
-    transform: translate(-40%,-40%);
-}
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+} 
+
+/* Calculator Setting */
 .cal-con{
     border: 1px solid red;
+    width: 400px;
+    height: auto;
 }
+
+/* Display Setting */
+.last-con , .current-con{
+    background-color: antiquewhite;
+    color: black;
+}
+
+
+/* Display Text Setting  */
+
 .last-con , .current-con{
 display: flex;
 align-items: center;
 justify-content: right;
 overflow: auto;
 }
+
 .last-con{
     height: 25px;
     text-align: right;
+
 }
 .current-con{
     height: 50px;
     text-align: right;
 }
 
+/* Button Setting */
 .input-con{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    gap: 1px;
 }
+button{
+    width: 95px;
+    height: 70px;
+    margin-left: 1.5px;
+    margin-top: 1.5px;
+    margin-bottom: 1.5px;
+}
+
+button:hover{
+    background-color: darkgray;
+    box-shadow: 1px 1px 1px 1px;
+}
+
