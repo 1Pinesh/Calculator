@@ -144,21 +144,21 @@ contanier.appendChild(input_con)
 // Calculator Operator Function
 function addition(previouse,current) {
     let ans = previouse + current
-    lastInput.textContent = ans
+    currentInput.textContent = ans
 }
 
 function subtraction(previouse,current) {
     let ans = previouse - current
-    lastInput.textContent = ans
+    currentInput.textContent = ans
 }
 
 function multiplication(current, previouse) {
 
     if (previouse.textContent === 0) {
-        lastInput.textContent = 0
+        currentInput.textContent = 0
     } else {
         let ans = previouse * current
-        lastInput.textContent = ans
+        currentInput.textContent = ans
     }
    
 }
@@ -166,13 +166,13 @@ function multiplication(current, previouse) {
 function division(previouse,current) {
 
     if (previouse.textContent === 0) {
-        lastInput.textContent = 0
+        currentInput.textContent = 0
     } else if (previouse === current) {
-        lastInput.textContent = 1
+        currentInput.textContent = 1
      }
     else {
         let ans = previouse / current
-        lastInput.textContent = ans
+        currentInput.textContent = ans
     }
 }
 
@@ -180,23 +180,20 @@ function division(previouse,current) {
 function equalFn(past, current, operator) {
     if (isNaN(past) || isNaN(current)) {
         alert("Please provide two inputs and an operator.");
-        console.log(parseFloat(past))
-        console.log(parseFloat(current))
-        console.log(operator)
     } else {
         if (operator === "+") {
-            return current.textContent = addition(parseFloat(past), parseFloat(current));
+            lastInput.textContent = addition(past, current);
         } else if (operator === "-") {
-            return current.textContent = subtraction(past, current);
+            lastInput.textContent = subtraction(past, current);
         } else if (operator === "÷") {
-            return current.textContent = division(past, current);
+            lastInput.textContent = division(past, current);
         } else if (operator === "X") {
-            return current.textContent = multiplication(past, current);
+            lastInput.textContent = multiplication(past, current);
         }
-    }
+    }   
 }
 
 equal.addEventListener("click", () => {
     equalFn(parseInt(lastInput.textContent), parseInt(currentInput.textContent), lastInput.textContent.substring(lastInput.textContent.length -1,lastInput.textContent.length));
-   
+
 });
