@@ -10,13 +10,21 @@ body{
     margin-right: -50%;
     transform: translate(-50%,-50%);
 }
-
+.last-con , .current-con{
+display: flex;
+align-items: center;
+justify-content: right;
+overflow: auto;
+}
 .last-con{
     height: 25px;
+    text-align: right;
 }
 .current-con{
     height: 50px;
+    text-align: right;
 }
+
 .input-con{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

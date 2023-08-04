@@ -21,7 +21,7 @@ const six = document.createElement("button")
 const seven = document.createElement("button")
 const eight = document.createElement("button")
 const nine = document.createElement("button")
-const add = document.createElement("button")
+const plus = document.createElement("button")
 const minus = document.createElement("button")
 const multiply = document.createElement("button")
 const divide = document.createElement("button")
@@ -29,6 +29,7 @@ const equal = document.createElement("button")
 const allClear = document.createElement("button")
 // creating input con
 const input_con = document.createElement("div")
+
 
 // Giving the button content
 zero.textContent = 0
@@ -42,7 +43,7 @@ seven.textContent = 7
 eight.textContent = 8
 nine.textContent = 9
 multiply.textContent = "X"
-add.textContent = "+"
+plus.textContent = "+"
 divide.textContent = "÷"
 minus.textContent = "-"
 allClear.textContent = "A/C"
@@ -53,7 +54,7 @@ equal.textContent = "="
 input_con.appendChild(seven)
 input_con.appendChild(eight)
 input_con.appendChild(nine)
-input_con.appendChild(add)
+input_con.appendChild(plus)
 input_con.appendChild(four)
 input_con.appendChild(five)
 input_con.appendChild(six)
@@ -81,3 +82,39 @@ document.body.appendChild(contanier)
 contanier.appendChild(display)
 contanier.appendChild(input_con)
 
+function addition(current, previouse) {
+    let ans = previouse + current
+    lastInput.textContent = ans
+}
+
+function subtraction(current, previouse) {
+    let ans = previouse - current
+    lastInput.textContent = ans
+}
+
+function multiplication(current, previouse) {
+
+    if (previouse.textContent === 0) {
+        lastInput.textContent = 0
+    } else {
+        let ans = previouse * current
+        lastInput.textContent = ans
+    }
+   
+}
+
+function division(current, previouse) {
+    if (previouse.textContent === 0) {
+        lastInput.textContent = 0
+    } else if (previouse === current) {
+        lastInput.textContent = 1
+     }
+    else {
+        let ans = previouse / current
+        lastInput.textContent = ans
+    }
+
+    
+}
+
+division(1,2)
