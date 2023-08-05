@@ -164,13 +164,13 @@ function multiplication(current, previouse) {
 }
 
 function division(previouse,current) {
-
-    if (previouse.textContent === 0) {
+    console.log(previouse);
+    console.log(current);
+    if (parseFloat(current) == 0 || parseFloat(previouse) == 0) {
         currentInput.textContent = 0
     } else if (previouse === current) {
         currentInput.textContent = 1
-     }
-    else {
+     } else {
         let ans = previouse / current
         currentInput.textContent = ans
     }
